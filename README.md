@@ -8,3 +8,5 @@ This is my first time creating something like this, its definitely not perfect a
 ![image](https://github.com/user-attachments/assets/106e66c3-fef3-4781-9fe0-33f4453227e3)
 
 its still very much in work in progres, but it is working
+
+now that i think about it creating a website/ a mod is probably more accesible than creating an exe

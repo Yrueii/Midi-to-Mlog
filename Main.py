@@ -276,18 +276,8 @@ copy.place(x=630, y=300,width=80,height=30)
 nexttrack = tk.Button(root,bg='lightblue', text="Next Track", command=next_track,font=(13))
 nexttrack.place(x=180, y=145,width=80,height=30)
 
-
-# Run the application
 root.mainloop()
 
-
-
-
-#@sfx-click
-# @sfx-press 60
-# @sfx-chatMessage 91
-# @sfx-noammo 40
-# @sfx-buttonClick 64 not ideal
 
 
 

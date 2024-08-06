@@ -15,13 +15,8 @@ def run(midi_file,location_x,location_y,track_number,sfx,volume,pitch,output):
             if msg.type == 'set_tempo':
                 tempo = msg.tempo
                 break
-    #print(tempo)
-    #print(ticks_per_beat)
     ms_per_beat = tempo / 1000
     ms_per_tick = ms_per_beat / ticks_per_beat
-    #print(ms_per_beat)
-    #print(ms_per_tick)
-    # Vars.world.tile(405, 205).setNet(Blocks.worldProcessor, Team.sharded, 0)
 
     switch_x = location_x - 1
     switch_y = location_y
@@ -135,25 +130,10 @@ def manual():
         return midi_file, track_number, sfx, volume, pitch, location_x, location_y
         break
 
- #   if_manual = input('manual = ')
- #   if if_manual == "1":
- #       midi_file, track_number, sfx, volume, pitch, location_x, location_y = manual()
- #   else:
-  #      location_x = 45
-   #     location_y = 452
-   #     track_number = 0
-   #     sfx = " @sfx-press "
-   ###     volume = 5
-    #    pitch = 60
-    #    midi_file = mido.MidiFile('F:/Download (F)/Credits to racing into the night online sequencer.mid')
-    #    output_file = ('F:/Download (F)/output_file1.txt')
-
 def on_button_click():
     midi_file = file.get()
     midi_file = mido.MidiFile(midi_file.replace("\\", "/").replace('"', ''))
     inv = 0
-
-
 
     location_x = file1.get()
     if location_x.isdigit():
@@ -282,13 +262,12 @@ copy = tk.Button(root, text="Copy!", command=copy,font=(13))
 copy.place(x=550, y=300,width=80,height=30)
 
 
-# Run the application
 root.mainloop()
 
 
 
 
-#@sfx-click
+# @sfx-click
 # @sfx-press 60
 # @sfx-chatMessage 91
 # @sfx-noammo 40

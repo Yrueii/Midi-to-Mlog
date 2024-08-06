@@ -3,9 +3,9 @@ convert midi files into JS Script which you can paste into the in-game's console
 
 uses the new Play Sound instruction in BE
 
-This is my first time creating something like this, its definitely not perfect and has many mistakes that maybe didn't even know, but everyone got to start somewhere, i don't recommend anyone to reverse engineer this.
+This is my first time creating something like this, its definitely not perfect and has many mistakes that maybe i didn't even know, but everyone got to start somewhere, i don't recommend anyone to reverse engineer this.
 
-![image](https://github.com/user-attachments/assets/106e66c3-fef3-4781-9fe0-33f4453227e3)
+![image](https://github.com/user-attachments/assets/96a61158-30e4-43f6-b31f-bf3d64ed5638)
 
 its still very much in work in progres, but it is working
 

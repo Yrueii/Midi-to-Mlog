@@ -5,7 +5,7 @@ uses the new Play Sound instruction in BE
 
 This is my first time creating something like this, its definitely not perfect and has many mistakes that maybe i didn't even know, but everyone got to start somewhere, i don't recommend anyone to reverse engineer this.
 
-![image](https://github.com/user-attachments/assets/96a61158-30e4-43f6-b31f-bf3d64ed5638)
+![image](https://github.com/user-attachments/assets/c2c13362-4e42-42c7-a516-592bad856fc1)
 
 its still very much in work in progres, but it is working
 

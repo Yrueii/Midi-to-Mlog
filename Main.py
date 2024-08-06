@@ -22,7 +22,7 @@ def run(midi_file,location_x,location_y,track_number,sfx,volume,pitch,output):
     switch_y = location_y
     code = (f'Vars.world.tile({location_x},{location_y}).setNet(Blocks.worldProcessor,Team.sharded,0);'
             f'Vars.world.tile({location_x},{location_y}).build.links.add(new LogicBlock.LogicLink({switch_x}, {switch_y}, "switch1", true));'
-            f"Vars.world.tile({location_x},{location_y}).updateCode('sensor s switch1 @enabled;jump 0 equal s 0;set start @time;")
+            f"Vars.world.build({location_x},{location_y}).updateCode('sensor s switch1 @enabled;jump 0 equal s 0;set start @time;")
 
     f_code = ''
     track = midi_file.tracks[track_number]
@@ -35,12 +35,12 @@ def run(midi_file,location_x,location_y,track_number,sfx,volume,pitch,output):
                     f'jump j{j} lessThan time {current_time * ms_per_tick};'
                     f'playsound false {sfx} {volume} {2**((msg.note - pitch) / 12)};')
             if j == 320:
-                code += 'control enabled switch1 0";'
+                code += "control enabled switch1 0');"
                 f_code += code
                 location_x += 1
                 code = (f'Vars.world.tile({location_x},{location_y}).setNet(Blocks.worldProcessor,Team.sharded,0);'
                         f'Vars.world.tile({location_x}, {location_y}).build.links.add(new LogicBlock.LogicLink({switch_x}, {switch_y}, "switch1", true));'
-                        f"Vars.world.tile({location_x},{location_y}).updateCode('sensor s switch1 @enabled;jump 0 equal s 0;set start @time;")
+                        f"Vars.world.build({location_x},{location_y}).updateCode('sensor s switch1 @enabled;jump 0 equal s 0;set start @time;")
                 j = 0
 
     code += "')"

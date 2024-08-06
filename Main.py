@@ -22,7 +22,7 @@ def run(midi_file,location_x,location_y,track_number,sfx,volume,pitch,output):
     switch_y = location_y
     code = (f'Vars.world.tile({location_x},{location_y}).setNet(Blocks.worldProcessor,Team.sharded,0);'
             f'Vars.world.tile({location_x},{location_y}).build.links.add(new LogicBlock.LogicLink({switch_x}, {switch_y}, "switch1", true));'
-            f'Vars.world.tile({location_x},{location_y}).build.code="sensor s switch1 @enabled;jump 0 equal s 0;set start @time;')
+            f"Vars.world.tile({location_x},{location_y}).updateCode('sensor s switch1 @enabled;jump 0 equal s 0;set start @time;")
 
     f_code = ''
     track = midi_file.tracks[track_number]
@@ -40,10 +40,10 @@ def run(midi_file,location_x,location_y,track_number,sfx,volume,pitch,output):
                 location_x += 1
                 code = (f'Vars.world.tile({location_x},{location_y}).setNet(Blocks.worldProcessor,Team.sharded,0);'
                         f'Vars.world.tile({location_x}, {location_y}).build.links.add(new LogicBlock.LogicLink({switch_x}, {switch_y}, "switch1", true));'
-                        f'Vars.world.tile({location_x},{location_y}).build.code="sensor s switch1 @enabled;jump 0 equal s 0;set start @time;')
+                        f"Vars.world.tile({location_x},{location_y}).updateCode('sensor s switch1 @enabled;jump 0 equal s 0;set start @time;")
                 j = 0
 
-    code += '"'
+    code += "')"
     f_code += code
     f_code = f_code + f'; Vars.world.tile({switch_x},{switch_y}).setNet(Blocks.switchBlock,Team.sharded,1)'
     #pyperclip.copy(f_code)
@@ -51,6 +51,7 @@ def run(midi_file,location_x,location_y,track_number,sfx,volume,pitch,output):
     num_characters = len(f_code)
     truncated_text = f_code[:10000]
     output.config(state='normal')
+    output.delete(1.0, tk.END)
     output.insert(tk.END, truncated_text)
     output.config(state='disabled')
     total_characters.config(text=f'total characters : {num_characters}')
@@ -203,6 +204,7 @@ copy = tk.Button(root, text="Copy!", command=copy,font=(13))
 copy.place(x=550, y=300,width=80,height=30)
 
 
+# Run the application
 root.mainloop()
 
 

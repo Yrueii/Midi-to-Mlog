@@ -4,7 +4,6 @@ from mido import MidiFile
 import tkinter as tk
 from tkinter import ttk
 from tkinter import scrolledtext
-from tkinter import PhotoImage
 
 def run(midi_file,location_x,location_y,output):
     global f_code
@@ -202,8 +201,6 @@ root.geometry("800x500")
 root.resizable(False, False)
 root.config(bg='#323740')
 
-icon = PhotoImage(file='E:/coding/pythonProject3/micro-processor.png')
-root.iconphoto(True, icon)
 
 invalidf = tk.Label(root,text="", bg='#323740', fg='white', font=(12))
 invalidf.place(x=430, y=50)

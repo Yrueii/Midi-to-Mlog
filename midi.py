@@ -156,7 +156,7 @@ tk.Label(root, text="Output :   (output is truncated, use the copy button to cop
 total_characters = tk.Label(root, text="total characters :",bg='#323740', fg='white',font=(12))
 total_characters.place(x=300, y=300)
 copied = tk.Label(root, text="",bg='#323740', fg='white',font=(15))
-copied.place(x=550, y=330)
+copied.place(x=635, y=305)
 tk.Label(root, text="File : File location of your midi file",bg='#323740', fg='white',font=(12)).place(x=30, y=330)
 tk.Label(root, text="eg C:/Users/user-name/Downloads/cat.midi",bg='#323740', fg='yellow',font=(12)).place(x=270, y=330)
 
@@ -203,7 +203,6 @@ copy = tk.Button(root, text="Copy!", command=copy,font=(13))
 copy.place(x=550, y=300,width=80,height=30)
 
 
-# Run the application
 root.mainloop()
 
 

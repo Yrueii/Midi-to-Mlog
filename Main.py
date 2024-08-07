@@ -62,7 +62,7 @@ def run(midi_file,location_x,location_y,output,speed):
                     j += 1
                     code += (f"""j{j}:;op sub time @time start;
                              jump j{j} lessThan time {(mido.tick2second(current_time, ticks_per_beat, tempo)*1000) / speed};
-                             playsound false {sfx} {volume} {2**((msg.note - pitch) / 12)} 0 0 false;""")
+                             playsound false {sfx} {volume} {2**((msg.note - pitch) / 12)} 0 0 0 false;""")
                     if j == 320:
                         code += 'control enabled switch1 0'
                         schem.add_block(Block(Content.WORLD_PROCESSOR, x, y, ProcessorConfig(code, [ProcessorLink(switchx-x, switchy-y, 'switch1')]).compress(), 0))

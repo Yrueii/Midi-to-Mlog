@@ -254,97 +254,97 @@ root.resizable(False, False)
 root.config(bg='#323740')
 
 # Get the directory of the executable or script
-base_path = os.path.dirname(os.path.abspath(__file__))
+# base_path = os.path.dirname(os.path.abspath(__file__))
 
-# Path to the image, assuming it's bundled with the .exe
-icon_path = os.path.join(base_path, "micro-processor.png")
+# # Path to the image, assuming it's bundled with the .exe
+# icon_path = os.path.join(base_path, "micro-processor.png")
 
-# Load the image
-icon = PhotoImage(file=icon_path)
+# # Load the image
+# icon = PhotoImage(file=icon_path)
 
-root.iconphoto(True, icon)
+# root.iconphoto(True, icon)
 
-invalidf = tk.Label(root,text="", bg='#323740', fg='white', font=(12))
+invalidf = tk.Label(root,text="", bg='#323740', fg='white', font=("Arial", 12))
 invalidf.place(x=430, y=50)
-invalid = tk.Label(root,text="enter a number", bg='#323740', fg='white', font=(12))
+invalid = tk.Label(root,text="enter a number", bg='#323740', fg='white', font=("Arial", 12))
 invalid.place(x=175, y=80)
-invalid1 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=(12))
+invalid1 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=("Arial", 12))
 invalid1.place(x=175, y=110)
-invalid3 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=(12))
+invalid3 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=("Arial", 12))
 invalid3.place(x=185, y=210)
-invalid4 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=(12))
+invalid4 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=("Arial", 12))
 invalid4.place(x=185, y=240)
-invalid5 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=('arial', 9))
+invalid5 = tk.Label(root, text="enter a number", bg='#323740', fg='white', font=("Arial", 9))
 invalid5.place(x=290, y=130)
 
-tk.Label(root, text="File :",bg='#323740', fg='white',font=(12)).place(x=75, y=50)
-tk.Label(root, text="Location X :",bg='#323740', fg='white',font=(12)).place(x=25, y=80)
-tk.Label(root, text="Location Y :",bg='#323740', fg='white',font=(12)).place(x=27, y=110)
-cr_track_num = tk.Label(root, text="Track : 1",bg='#323740', fg='white',font=('arial', 15))
+tk.Label(root, text="File :",bg='#323740', fg='white',font=("Arial", 12)).place(x=75, y=50)
+tk.Label(root, text="Location X :",bg='#323740', fg='white',font=("Arial", 12)).place(x=25, y=80)
+tk.Label(root, text="Location Y :",bg='#323740', fg='white',font=("Arial", 12)).place(x=27, y=110)
+cr_track_num = tk.Label(root, text="Track : 1",bg='#323740', fg='white',font=("Arial", 15))
 cr_track_num.place(x=80, y=145)
 
-tk.Label(root, text="Sfx :",bg='#323740', fg='white',font=(12)).place(x=89, y=180)
-tk.Label(root, text="Volume :",bg='#323740', fg='white',font=(12)).place(x=57, y=210)
-tk.Label(root, text="Pitch :",bg='#323740', fg='white',font=(12)).place(x=75, y=240)
-tk.Label(root, text="Speed: ",bg='#323740', fg='white',font=(12)).place(x=300, y=85)
+tk.Label(root, text="Sfx :",bg='#323740', fg='white',font=("Arial", 12)).place(x=89, y=180)
+tk.Label(root, text="Volume :",bg='#323740', fg='white',font=("Arial", 12)).place(x=57, y=210)
+tk.Label(root, text="Pitch :",bg='#323740', fg='white',font=("Arial", 12)).place(x=75, y=240)
+tk.Label(root, text="Speed: ",bg='#323740', fg='white',font=("Arial", 12)).place(x=300, y=85)
 
-tk.Label(root, text="Output :   (output is truncated, use the copy button to copy)",bg='#323740', fg='white',font=(12)).place(x=380, y=73)
-total_characters = tk.Label(root, text="total characters :",bg='#323740', fg='white',font=(12))
+tk.Label(root, text="Output :   (output is truncated, use the copy button to copy)",bg='#323740', fg='white',font=("Arial", 12)).place(x=380, y=73)
+total_characters = tk.Label(root, text="total characters :",bg='#323740', fg='white',font=("Arial", 12))
 total_characters.place(x=380, y=300)
-copied = tk.Label(root, text="",bg='#323740', fg='white',font=(15))
+copied = tk.Label(root, text="",bg='#323740', fg='white',font=("Arial", 15))
 copied.place(x=715, y=305)
-tk.Label(root, text="File : File location of your midi file, eg",bg='#323740', fg='white',font=(12)).place(x=30, y=330)
-tk.Label(root, text="C:/Users/user-name/Downloads/cat.midi",bg='#323740', fg='yellow',font=(12)).place(x=290, y=330)
-tk.Label(root, text="Location X : the X coordinates of where you want the processors to be",bg='#323740', fg='white',font=(12)).place(x=30, y=350)
-tk.Label(root, text="Location Y : the Y coordinates of where you want the processors to be",bg='#323740', fg='white',font=(12)).place(x=30, y=370)
-tk.Label(root, text="Location X and Y is not used for Schematic Mode",bg='#323740', fg='yellow',font=(12)).place(x=50, y=390)
-tk.Label(root, text="Track : Some midi files has multiple tracks(the different colored notes you see on a synthesizer app)",bg='#323740', fg='white',font=(12)).place(x=30, y=410)
-tk.Label(root, text='you can change the configuration of each track by clicking "Next Track" ',bg='#323740', fg='white',font=(12)).place(x=30, y=430)
-tk.Label(root, text="Pitch : the chosen sfx default pitch (60 is c4)",bg='#323740', fg='white',font=(12)).place(x=30, y=450)
-tk.Label(root, text="Speed : speed multiplier, 1 is normal, don't put number below 0",bg='#323740', fg='white',font=(12)).place(x=30, y=470)
+tk.Label(root, text="File : File location of your midi file, eg",bg='#323740', fg='white',font=("Arial", 12)).place(x=30, y=330)
+tk.Label(root, text="C:/Users/user-name/Downloads/cat.midi",bg='#323740', fg='yellow',font=("Arial", 12)).place(x=290, y=330)
+tk.Label(root, text="Location X : the X coordinates of where you want the processors to be",bg='#323740', fg='white',font=("Arial", 12)).place(x=30, y=350)
+tk.Label(root, text="Location Y : the Y coordinates of where you want the processors to be",bg='#323740', fg='white',font=("Arial", 12)).place(x=30, y=370)
+tk.Label(root, text="Location X and Y is not used for Schematic Mode",bg='#323740', fg='yellow',font=("Arial", 12)).place(x=50, y=390)
+tk.Label(root, text="Track : Some midi files has multiple tracks(the different colored notes you see on a synthesizer app)",bg='#323740', fg='white',font=("Arial", 12)).place(x=30, y=410)
+tk.Label(root, text='you can change the configuration of each track by clicking "Next Track" ',bg='#323740', fg='white',font=("Arial", 12)).place(x=30, y=430)
+tk.Label(root, text="Pitch : the chosen sfx default pitch (60 is c4)",bg='#323740', fg='white',font=("Arial", 12)).place(x=30, y=450)
+tk.Label(root, text="Speed : speed multiplier, 1 is normal, don't put number below 0",bg='#323740', fg='white',font=("Arial", 12)).place(x=30, y=470)
 
 
 
-file = ttk.Entry(root, style='TEntry', font=(10))
+file = ttk.Entry(root, style='TEntry', font=("Arial", 10))
 file.place(x=120, y=50, width=300, height=23)
 
-file1 = ttk.Entry(root, style='TEntry', font=(10) )
+file1 = ttk.Entry(root, style='TEntry', font=("Arial", 10) )
 file1.place(x=120, y=80, width=50, height=23)
 file1.insert(0, '1')
 
-file2 = ttk.Entry(root, style='TEntry', font=(10) )
+file2 = ttk.Entry(root, style='TEntry', font=("Arial", 10) )
 file2.place(x=120, y=110, width=50, height=23)
 file2.insert(0, '1')
 
-file4 = ttk.Entry(root, style='TEntry', font=(10) )
+file4 = ttk.Entry(root, style='TEntry', font=("Arial", 10) )
 file4.place(x=130, y=180, width=115, height=23)
 file4.insert(0, '@sfx-press')
 
-file5 = ttk.Entry(root, style='TEntry', font=(10) )
+file5 = ttk.Entry(root, style='TEntry', font=("Arial", 10) )
 file5.place(x=130, y=210, width=50, height=23)
 file5.insert(0, '1')
 
-file6 = ttk.Entry(root, style='TEntry', font=(10) )
+file6 = ttk.Entry(root, style='TEntry', font=("Arial", 10) )
 file6.place(x=130, y=240, width=50, height=23)
 file6.insert(0, '60')
 
-file7 = ttk.Entry(root, style='TEntry', font=(10) )
+file7 = ttk.Entry(root, style='TEntry', font=("Arial", 10) )
 file7.place(x=310, y=110, width=50, height=23)
 file7.insert(0, '1')
 
 
 
-output = scrolledtext.ScrolledText(root, font=(10), state='disabled')
+output = scrolledtext.ScrolledText(root, font=("Arial", 10), state='disabled')
 output.place(x=380, y=95, width=400, height=200)
 
 
-button = tk.Button(root,bg='lightblue', text="Generate!", command=on_button_click,font=(13))
+button = tk.Button(root,bg='lightblue', text="Generate!", command=on_button_click,font=("Arial", 13))
 button.place(x=60, y=270,width=100,height=50)
 
-copy = tk.Button(root,bg='lightblue', text="Copy!", command=copy,font=(13))
+copy = tk.Button(root,bg='lightblue', text="Copy!", command=copy,font=("Arial", 13))
 copy.place(x=630, y=300,width=80,height=30)
 
-nexttrack = tk.Button(root,bg='lightblue', text="Next Track", command=next_track,font=(13))
+nexttrack = tk.Button(root,bg='lightblue', text="Next Track", command=next_track,font=("Arial", 13))
 nexttrack.place(x=180, y=145,width=80,height=30)
 
 checked = tk.IntVar()

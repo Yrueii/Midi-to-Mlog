@@ -1,9 +1,11 @@
 import mido
+import os
 import pyperclip
 from mido import MidiFile
 import tkinter as tk
 from tkinter import ttk
 from tkinter import scrolledtext
+from tkinter import PhotoImage
 from pymsch import Schematic, Block, Content, ProcessorConfig, ProcessorLink
 import base64
 
@@ -63,6 +65,7 @@ def run(midi_file,location_x,location_y,output,speed):
                     code += (f"""j{j}:;op sub time @time start;
                              jump j{j} lessThan time {(mido.tick2second(current_time, ticks_per_beat, tempo)*1000) / speed};
                              playsound false {sfx} {volume} {2**((msg.note - pitch) / 12)} 0 0 0 false;""")
+
                     if j == 320:
                         code += 'control enabled switch1 0'
                         schem.add_block(Block(Content.WORLD_PROCESSOR, x, y, ProcessorConfig(code, [ProcessorLink(switchx-x, switchy-y, 'switch1')]).compress(), 0))
@@ -250,6 +253,17 @@ root.geometry("800x500")
 root.resizable(False, False)
 root.config(bg='#323740')
 
+# Get the directory of the executable or script
+base_path = os.path.dirname(os.path.abspath(__file__))
+
+# Path to the image, assuming it's bundled with the .exe
+icon_path = os.path.join(base_path, "micro-processor.png")
+
+# Load the image
+icon = PhotoImage(file=icon_path)
+
+root.iconphoto(True, icon)
+
 invalidf = tk.Label(root,text="", bg='#323740', fg='white', font=(12))
 invalidf.place(x=430, y=50)
 invalid = tk.Label(root,text="enter a number", bg='#323740', fg='white', font=(12))
@@ -340,11 +354,23 @@ check.place(x=580,y=45)
 check_style = ttk.Style()
 check_style.configure("TCheckbutton",padding=5,font=("Arial", 15),foreground='white',background='#323740')
 
+
+
+
+
+
+# Run the application
 root.mainloop()
 
 
      
 
+
+#@sfx-click
+# @sfx-press 60
+# @sfx-chatMessage 91
+# @sfx-noammo 40
+# @sfx-buttonClick 64 not ideal
 
 
 

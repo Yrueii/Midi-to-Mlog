@@ -254,15 +254,15 @@ root.resizable(False, False)
 root.config(bg='#323740')
 
 # Get the directory of the executable or script
-# base_path = os.path.dirname(os.path.abspath(__file__))
+base_path = os.path.dirname(os.path.abspath(__file__))
 
-# # Path to the image, assuming it's bundled with the .exe
-# icon_path = os.path.join(base_path, "micro-processor.png")
+# Path to the image, assuming it's bundled with the .exe
+icon_path = os.path.join(base_path, "micro-processor.png")
 
-# # Load the image
-# icon = PhotoImage(file=icon_path)
+# Load the image
+icon = PhotoImage(file=icon_path)
 
-# root.iconphoto(True, icon)
+root.iconphoto(True, icon)
 
 invalidf = tk.Label(root,text="", bg='#323740', fg='white', font=("Arial", 12))
 invalidf.place(x=430, y=50)
